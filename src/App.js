@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar";
+import MeModal from "./Components/MeModal";
+import ProjectModal from "./Components/ProjectModal";
+import Main from "./Components/Main";
+import SingleGame from "./Pages/SingleGame";
+import { useGlobalContext } from "./Context/context";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
+  const { games } = useGlobalContext();
+  console.log(games[0]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <Router>
+        <Navbar />
+        <Sidebar />
+        <MeModal />
+        <ProjectModal />
+        <Routes>
+          <Route exact path="/" element={<Main />} />
 
+          <Route
+            exact
+            path="/:title"
+            element={<SingleGame allGames={games} />}
+          />
+        </Routes>
+      </Router>
+    </>
+  );
+};
 export default App;
