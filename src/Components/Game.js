@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/context";
+import AddButton from "./AddButton";
 
 const Game = ({ id, genre, title, platform, thumbnail }) => {
   return (
@@ -17,7 +18,15 @@ const Game = ({ id, genre, title, platform, thumbnail }) => {
         <h5 className="column">{title}</h5>
         <h5 className="column">{genre}</h5>
       </footer>
-      <p className="column">{platform}</p>
+      <footer>
+        <p className="column">{platform}</p>
+        <AddButton
+          id={id}
+          title={title}
+          platfrom={platform}
+          thumbnail={thumbnail}
+        />
+      </footer>
     </Wrapper>
   );
 };

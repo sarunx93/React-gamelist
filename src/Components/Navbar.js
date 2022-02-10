@@ -29,7 +29,9 @@ const Navbar = () => {
             About Me
           </button>
         </ul>
-        <MyGamesButton />
+        <Link to="/MyGames">
+          <MyGamesButton />
+        </Link>
       </div>
     </NavContainer>
   );
