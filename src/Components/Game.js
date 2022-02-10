@@ -23,7 +23,7 @@ const Game = ({ id, genre, title, platform, thumbnail }) => {
         <AddButton
           id={id}
           title={title}
-          platfrom={platform}
+          platform={platform}
           thumbnail={thumbnail}
         />
       </footer>

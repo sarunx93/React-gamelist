@@ -50,7 +50,7 @@ const AppProvider = ({ children }) => {
       console.log(err);
     }
   };
-
+  console.log(games[0]);
   useEffect(() => {
     fetchGames();
   }, []);

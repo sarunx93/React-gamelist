@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { useMyGameContext } from "../Context/mygames_context";
 
 const AddButton = (props) => {
   const { id, title, platform, thumbnail } = props;
-  //post data to backend
+
+  const { addToMyGames } = useMyGameContext();
+
   return (
-    <MyGamesContainer onClick={() => console.log(title)}>
+    <MyGamesContainer
+      onClick={() => addToMyGames(id, title, platform, thumbnail)}
+    >
       <h5>Add to list</h5>
     </MyGamesContainer>
   );
