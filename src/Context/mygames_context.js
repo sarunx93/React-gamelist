@@ -1,11 +1,17 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "../Reducers/mygame-reducer";
 
-// Get data from firebase
-// dispatch actions here
-// manipulate states in mygames reducer
+const getLocalStorage = () => {
+  let game = localStorage.getItem("gamelist");
+  if (game) {
+    return JSON.parse(localStorage.getItem("gamelist"));
+  } else {
+    return [];
+  }
+};
+
 const initialState = {
-  gameList: [],
+  gameList: getLocalStorage(),
   total_items: 0,
 };
 
@@ -14,14 +20,27 @@ const MyGameContext = React.createContext();
 export const MyGameProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const addToMyGames = (id, title, platform, thumbnail) => {
+    console.log(id);
     dispatch({
       type: "ADD_TO_MYGAMES",
       payload: { id, title, platform, thumbnail },
     });
   };
+  const removeGame = (id) => {
+    console.log(id);
+    dispatch({ type: "REMOVE_GAME", payload: id });
+  };
+  const clearGame = () => {
+    dispatch({ type: "CLEAR_GAME" });
+  };
 
+  useEffect(() => {
+    localStorage.setItem("gamelist", JSON.stringify(state.gameList));
+  }, [state.gameList]);
   return (
-    <MyGameContext.Provider value={{ ...state, addToMyGames }}>
+    <MyGameContext.Provider
+      value={{ ...state, addToMyGames, removeGame, clearGame }}
+    >
       {children}
     </MyGameContext.Provider>
   );
