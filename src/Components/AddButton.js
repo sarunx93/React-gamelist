@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useMyGameContext } from "../Context/mygames_context";
 
 const AddButton = (props) => {
-  const { id, title, platform, thumbnail } = props;
+  const { id, title, platform, thumbnail, added } = props;
 
   const { addToMyGames } = useMyGameContext();
 

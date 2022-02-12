@@ -6,22 +6,43 @@ import { getUniqueValues } from "../helpers";
 import { useFilterContext } from "../Context/filter-context";
 import { useGlobalContext } from "../Context/context";
 const GameList = () => {
-  const { filtered_games: games } = useFilterContext();
+  const {
+    filtered_games: games,
+    filters: { platform, genre },
+  } = useFilterContext();
   const { isLoading } = useGlobalContext();
   const uniqueGenre = getUniqueValues(games, "genre");
-
+  console.log(platform);
   if (isLoading) {
     return <Loading />;
   }
-
+  if (games.length === 0) {
+    return <h1>No results found</h1>;
+  }
   return (
-    <Wrapper>
-      <div className="game-container">
-        {games.map((game) => {
-          return <Game key={game.id} {...game} uniqueGenre={uniqueGenre} />;
-        })}
-      </div>
-    </Wrapper>
+    <>
+      <Wrapper>
+        {platform === "all" ? (
+          <>
+            <h3>{`Genre : ${games.map((game) => game.genre)[0]}`}</h3>
+            <h4>{`There are ${games.length} in all platforms.`}</h4>
+          </>
+        ) : (
+          <>
+            <h3>{`Genre : ${games.map((game) => game.genre)[0]}`}</h3>
+            <h4>{`There are ${games.length} games in ${
+              games.map((game) => game.platform)[0]
+            } plaform.`}</h4>
+          </>
+        )}
+
+        <div className="game-container">
+          {games.map((game) => {
+            return <Game key={game.id} {...game} uniqueGenre={uniqueGenre} />;
+          })}
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

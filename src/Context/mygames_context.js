@@ -12,7 +12,6 @@ const getLocalStorage = () => {
 
 const initialState = {
   gameList: getLocalStorage(),
-  total_items: 0,
 };
 
 const MyGameContext = React.createContext();

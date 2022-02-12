@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -6,6 +6,10 @@ import { useGlobalContext } from "../Context/context";
 import AddButton from "./AddButton";
 
 const Game = ({ id, genre, title, platform, thumbnail }) => {
+  const [added, setAdded] = useState(false);
+  const addedHandler = () => {
+    setAdded(true);
+  };
   return (
     <Wrapper>
       <div className="container">
@@ -25,6 +29,8 @@ const Game = ({ id, genre, title, platform, thumbnail }) => {
           title={title}
           platform={platform}
           thumbnail={thumbnail}
+          added={added}
+          onAdded={addedHandler}
         />
       </footer>
     </Wrapper>

@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const { games } = useGlobalContext();
-
+  console.log(games[0]);
   return (
     <>
       <Router>
