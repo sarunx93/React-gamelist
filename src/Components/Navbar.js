@@ -11,7 +11,9 @@ const Navbar = () => {
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <h3>Game List Project</h3>
+          <Link to="/">
+            <h3 className="home">Game List Project</h3>
+          </Link>
 
           <button
             type="button"
@@ -80,6 +82,9 @@ const NavContainer = styled.nav`
     &:hover {
       color: blue;
     }
+  }
+  .home {
+    cursor: pointer;
   }
   @media (min-width: 992px) {
     .nav-toggle {

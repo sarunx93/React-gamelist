@@ -20,8 +20,8 @@ const MyGamesContainer = styled.button`
   &:hover {
     color: blue;
   }
-  @media screen and (max-width: 992px) {
-    display: none;
-  }
+  // @media screen and (max-width: 992px) {
+  //   display: none;
+  // }
 `;
 export default MyGamesButton;

@@ -2,7 +2,7 @@ import React from "react";
 import { useFilterContext } from "../Context/filter-context";
 import styled from "styled-components";
 import { getUniqueValues } from "../helpers";
-import { FaCheck } from "react-icons/fa";
+
 const Filter = () => {
   const {
     filters: { text, genre, platform },
@@ -12,8 +12,7 @@ const Filter = () => {
   } = useFilterContext();
   const genres = getUniqueValues(all_games, "genre");
   const platforms = getUniqueValues(all_games, "platform");
-  console.log(genres);
-  console.log(platforms);
+
   return (
     <Wrapper>
       <div className="content">

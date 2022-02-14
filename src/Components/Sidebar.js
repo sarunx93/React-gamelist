@@ -2,11 +2,12 @@ import React from "react";
 import { useGlobalContext } from "../Context/context";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
-import MyGamesButton from "./MyGamesButton";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const { sidebarCloseHandler, sidebarOpen } = useGlobalContext();
-  console.log(sidebarOpen);
+  const { sidebarCloseHandler, sidebarOpen, openModalMe, openModalProj } =
+    useGlobalContext();
+
   return (
     <SidebarContainer>
       <aside className={`${sidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}>
@@ -17,12 +18,10 @@ const Sidebar = () => {
           </button>
         </div>
         <ul className="links">
-          <li>About the project</li>
-          <li>About Me</li>
+          <li onClick={openModalProj}>About the project</li>
+
+          <li onClick={openModalMe}>About Me</li>
         </ul>
-        <div className="game-btn-container">
-          <MyGamesButton />
-        </div>
       </aside>
     </SidebarContainer>
   );

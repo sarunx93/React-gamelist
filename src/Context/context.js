@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-
+import { paginate } from "../helpers";
 const url = "https://free-to-play-games-database.p.rapidapi.com/api/games";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -11,12 +11,14 @@ const AppProvider = ({ children }) => {
 
   const openModalMe = () => {
     setModalMeOpen(true);
+    setSiderbarOpen(false);
   };
   const closeModalMe = () => {
     setModalMeOpen(false);
   };
   const openModalProj = () => {
     setModalProjectOpen(true);
+    setSiderbarOpen(false);
   };
   const closeModalProj = () => {
     setModalProjectOpen(false);
@@ -50,7 +52,7 @@ const AppProvider = ({ children }) => {
       console.log(err);
     }
   };
-  console.log(games[0]);
+
   useEffect(() => {
     fetchGames();
   }, []);

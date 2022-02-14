@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Game from "./Game";
 import Loading from "./Loading";
 import { getUniqueValues } from "../helpers";
 import { useFilterContext } from "../Context/filter-context";
 import { useGlobalContext } from "../Context/context";
+import { paginate } from "../helpers";
 const GameList = () => {
-  const {
-    filtered_games: games,
-    filters: { platform, genre },
-  } = useFilterContext();
+  const { filtered_games: games } = useFilterContext();
   const { isLoading } = useGlobalContext();
   const uniqueGenre = getUniqueValues(games, "genre");
-  console.log(platform);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -22,20 +20,7 @@ const GameList = () => {
   return (
     <>
       <Wrapper>
-        {platform === "all" ? (
-          <>
-            <h3>{`Genre : ${games.map((game) => game.genre)[0]}`}</h3>
-            <h4>{`There are ${games.length} in all platforms.`}</h4>
-          </>
-        ) : (
-          <>
-            <h3>{`Genre : ${games.map((game) => game.genre)[0]}`}</h3>
-            <h4>{`There are ${games.length} games in ${
-              games.map((game) => game.platform)[0]
-            } plaform.`}</h4>
-          </>
-        )}
-
+        <h3>{`There are ${games.length} games matched.`}</h3>
         <div className="game-container">
           {games.map((game) => {
             return <Game key={game.id} {...game} uniqueGenre={uniqueGenre} />;

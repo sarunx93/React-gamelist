@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import MeModal from "./Components/MeModal";
@@ -6,12 +7,13 @@ import Main from "./Components/Main";
 
 import SingleGame from "./Pages/SingleGame";
 import MyGames from "./Pages/MyGames";
+
 import { useGlobalContext } from "./Context/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const { games } = useGlobalContext();
-  console.log(games[0]);
+
   return (
     <>
       <Router>
