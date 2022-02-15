@@ -11,6 +11,7 @@ const MyGamesButton = () => {
 
 const MyGamesContainer = styled.button`
   margin: 0 0.75rem;
+  color: yellow;
   background: transparent;
   border: transparent;
   font-size: 1.25rem;
@@ -18,7 +19,7 @@ const MyGamesContainer = styled.button`
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   &:hover {
-    color: blue;
+    color: white;
   }
   // @media screen and (max-width: 992px) {
   //   display: none;

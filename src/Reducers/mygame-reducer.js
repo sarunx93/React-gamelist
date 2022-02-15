@@ -1,6 +1,6 @@
 const mygame_reducer = (state, action) => {
   if (action.type === "ADD_TO_MYGAMES") {
-    const { id, title, platform, thumbnail } = action.payload;
+    const { id, title, platform, thumbnail, added } = action.payload;
     console.log(id);
 
     const tempGame = state.gameList.find((game) => game.id === id);
@@ -15,7 +15,7 @@ const mygame_reducer = (state, action) => {
       });
       return { ...state, gameList: tempGameList };
     } else {
-      const newGame = { id, title, platform, thumbnail };
+      const newGame = { id, title, platform, thumbnail, added };
 
       return { ...state, gameList: [...state.gameList, newGame] };
     }

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useMyGameContext } from "../Context/mygames_context";
 
 const AddButton = (props) => {
-  const { id, title, platform, thumbnail, added } = props;
+  const { id, title, platform, thumbnail } = props;
 
   const { addToMyGames } = useMyGameContext();
 
   return (
     <MyGamesContainer
-      onClick={() => addToMyGames(id, title, platform, thumbnail)}
+      onClick={() => addToMyGames(id, title, platform, thumbnail, true)}
     >
-      <h5>Add to list</h5>
+      <h5 type="button">Add to list</h5>
     </MyGamesContainer>
   );
 };

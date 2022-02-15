@@ -18,11 +18,11 @@ const MyGameContext = React.createContext();
 
 export const MyGameProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const addToMyGames = (id, title, platform, thumbnail) => {
+  const addToMyGames = (id, title, platform, thumbnail, added) => {
     console.log(id);
     dispatch({
       type: "ADD_TO_MYGAMES",
-      payload: { id, title, platform, thumbnail },
+      payload: { id, title, platform, thumbnail, added },
     });
   };
   const removeGame = (id) => {

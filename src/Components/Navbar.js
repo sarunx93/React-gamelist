@@ -44,6 +44,7 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #030301;
 
   .nav-center {
     width: 90vw;
@@ -72,6 +73,7 @@ const NavContainer = styled.nav`
     font-size: 1.9rem;
   }
   .butn {
+    color: yellow;
     margin: 0 0.75rem;
     background: transparent;
     border: transparent;
@@ -80,11 +82,12 @@ const NavContainer = styled.nav`
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     cursor: pointer;
     &:hover {
-      color: blue;
+      color: white;
     }
   }
   .home {
     cursor: pointer;
+    color: yellow;
   }
   @media (min-width: 992px) {
     .nav-toggle {

@@ -4,12 +4,12 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/context";
 import AddButton from "./AddButton";
+import { useMyGameContext } from "../Context/mygames_context";
 
 const Game = ({ id, genre, title, platform, thumbnail }) => {
-  const [added, setAdded] = useState(false);
-  const addedHandler = () => {
-    setAdded(true);
-  };
+  const { gameList } = useMyGameContext();
+  const idArray = gameList.map((game) => game.id);
+  const inStorage = idArray.includes(id);
   return (
     <Wrapper>
       <div className="container">
@@ -24,14 +24,16 @@ const Game = ({ id, genre, title, platform, thumbnail }) => {
       </footer>
       <footer>
         <p className="column">{platform}</p>
-        <AddButton
-          id={id}
-          title={title}
-          platform={platform}
-          thumbnail={thumbnail}
-          added={added}
-          onAdded={addedHandler}
-        />
+        {inStorage && <h5>Added</h5>}
+
+        {!inStorage && (
+          <AddButton
+            id={id}
+            title={title}
+            platform={platform}
+            thumbnail={thumbnail}
+          />
+        )}
       </footer>
     </Wrapper>
   );

@@ -5,7 +5,7 @@ import Loading from "./Loading";
 import { getUniqueValues } from "../helpers";
 import { useFilterContext } from "../Context/filter-context";
 import { useGlobalContext } from "../Context/context";
-import { paginate } from "../helpers";
+
 const GameList = () => {
   const { filtered_games: games } = useFilterContext();
   const { isLoading } = useGlobalContext();
