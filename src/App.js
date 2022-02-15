@@ -7,8 +7,7 @@ import Main from "./Components/Main";
 
 import SingleGame from "./Pages/SingleGame";
 import MyGames from "./Pages/MyGames";
-import Footer from "./Components/Footer";
-import ScrollButton from "./Components/ScrollButton";
+
 import { useGlobalContext } from "./Context/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -32,8 +31,6 @@ const App = () => {
           />
           <Route exact path="/Mygames" element={<MyGames />} />
         </Routes>
-        <ScrollButton />
-        <Footer />
       </Router>
     </>
   );

@@ -38,10 +38,12 @@ const SingleGame = () => {
 
 const Wrapper = styled.section`
   margin-top: 3rem;
+
   .content-container {
     margin: 0 auto;
     text-align: center;
     padding: 1rem;
+    height: 76vh;
   }
   .game-img {
     width: 100%;

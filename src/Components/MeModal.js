@@ -19,13 +19,21 @@ const MeModal = () => {
           </button>
 
           <p className="content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet,
-            eligendi accusamus hic ducimus dolore eos fugit corrupti dolor id
-            consequuntur? Nobis beatae nemo debitis enim pariatur adipisci
-            repellendus. Eos pariatur ullam ipsum quidem deserunt sed?
-            Dignissimos sapiente vel, perferendis explicabo aut magni alias
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet,
-            eligendi accusamus hic ducimus dolore eos fugit corrupti dolor id
+            Hi there, My name is Sarun Pornaruntham, a junior front-end
+            developer who enjoys improving himself and learning new skills. I'd
+            like to thank anyone who comes by and checkout this small project
+            and I do hope that this project could inspire those who just started
+            that they can build things and will get better in every project they
+            build.
+            <br /> You can reach out to me at
+            <a href="https://www.linkedin.com/in/sarun-p/">my LinkedIn </a>
+            or visit my GitHub repo at{" "}
+            <a href="https://github.com/sarunx93">my Github</a>
+            <br />
+            <br />
+            Cheers,
+            <br />
+            Sarun
           </p>
         </div>
       </div>
@@ -47,7 +55,9 @@ const ModalContainer = styled.div`
     visibility: hidden;
     z-index: -1;
   }
-
+  .content {
+    text-align: left;
+  }
   .show-modal {
     visibility: visible;
     z-index: 10;
@@ -62,7 +72,7 @@ const ModalContainer = styled.div`
     text-align: center;
 
     position: relative;
-    padding: 1rem;
+    padding: 0.5rem 2rem;
   }
   .close-modal-btn {
     position: absolute;

@@ -19,13 +19,19 @@ const MeModal = () => {
           </button>
 
           <p className="content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet,
-            eligendi accusamus hic ducimus dolore eos fugit corrupti dolor id
-            consequuntur? Nobis beatae nemo debitis enim pariatur adipisci
-            repellendus. Eos pariatur ullam ipsum quidem deserunt sed?
-            Dignissimos sapiente vel, perferendis explicabo aut magni alias
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet,
-            eligendi accusamus hic ducimus dolore eos fugit corrupti dolor id
+            Game List Project is a pure front-end React project that utilizes
+            API from Freetogame.com. I am so grateful to them. This project was
+            developed by ReactJs along with React hooks such as useState,
+            useEffect, useReducer and Context API. This application displays
+            game profile derived from Freetogame API and manipulates in a few
+            ways such as filtering and getting them in to a list of favourite
+            games. I do wish that gamers or non-gamers who drop by will more or
+            less enjoy this website. Maybe you can find out your new favourite
+            here. <br />
+            <br />
+            Cheers,
+            <br />
+            Sarun
           </p>
         </div>
       </div>
@@ -47,7 +53,10 @@ const ModalContainer = styled.div`
     visibility: hidden;
     z-index: -1;
   }
-
+  .content {
+    text-align: left;
+    padding: 0.5rem 2rem;
+  }
   .show-modal {
     visibility: visible;
     z-index: 10;

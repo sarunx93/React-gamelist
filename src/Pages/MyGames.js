@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useMyGameContext } from "../Context/mygames_context";
 import { FaTrash } from "react-icons/fa";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 const MyGames = () => {
-  const { gameList } = useMyGameContext();
-
-  const { removeGame } = useMyGameContext();
+  const { gameList, removeGame, clearGame } = useMyGameContext();
 
   return (
     <>
@@ -13,7 +12,7 @@ const MyGames = () => {
       <Wrapper>
         {gameList.map((game) => {
           return (
-            <div className="container">
+            <div className="container" key={game.id}>
               <div className="content-container">
                 <img src={game.thumbnail} alt="" />
               </div>
@@ -33,6 +32,19 @@ const MyGames = () => {
             </div>
           );
         })}
+        {gameList.length === 0 && (
+          <Link to="/">
+            <button type="button" className="clear-btn">
+              Back
+            </button>
+          </Link>
+        )}
+
+        {gameList.length > 0 && (
+          <button type="button" className="clear-btn" onClick={clearGame}>
+            Clear
+          </button>
+        )}
       </Wrapper>
     </>
   );
@@ -42,7 +54,15 @@ const Wrapper = styled.section`
   padding: 1rem;
   text-align: center;
   align-items: center;
+  .clear-btn {
+    background: var(--clr-red-dark);
+    color: var(--clr-white);
+    // padding: 0.25rem 0.5rem;
+    padding: 0.75rem;
 
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
   .container {
     display: flex;
     justify-content: space-between;

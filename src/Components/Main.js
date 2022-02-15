@@ -2,6 +2,8 @@ import React from "react";
 import GameList from "./GameList";
 import Filter from "./Filter";
 import styled from "styled-components";
+import Footer from "./Footer";
+import ScrollButton from "./ScrollButton";
 
 const Main = () => {
   return (
@@ -10,6 +12,8 @@ const Main = () => {
         <Filter />
         <GameList />
       </div>
+      <ScrollButton />
+      <Footer />
     </MainCotainer>
   );
 };

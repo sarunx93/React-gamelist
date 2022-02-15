@@ -20,13 +20,14 @@ const mygame_reducer = (state, action) => {
       return { ...state, gameList: [...state.gameList, newGame] };
     }
   }
-  if ((action.type = "REMOVE_GAME")) {
+  if (action.type === "REMOVE_GAME") {
     const tempGame = state.gameList.filter(
       (item) => item.id !== action.payload
     );
     return { ...state, gameList: tempGame };
   }
   if (action.type === "CLEAR_GAME") {
+    console.log("hello world");
     return { ...state, gameList: [] };
   }
   throw new Error(`No Matching "${action.type}" - action type`);
