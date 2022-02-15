@@ -46,6 +46,7 @@ const NavContainer = styled.nav`
   justify-content: center;
   background: #030301;
 
+  z-index: 3;
   .nav-center {
     width: 90vw;
     margin: 0 auto;
