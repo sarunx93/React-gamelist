@@ -21,7 +21,11 @@ Initailly, there are 368 games that are fetched from the API and with this, you 
 and this is how it changed after filtering.
 </p>
 <img src="github_pic/after_filter.png"/>
-You can now see that there are only 9 games the matched with the filter of PC platform and fighting genre.
+You can now see that there are only 9 games the matched with the filter of PC platform and fighting genre. Finally, if you are happy with your results and want to clear it, simply click the clear filter button to retrun to initial state.
 
 ## 2.Search
 If you know a lot of cool games, you may want to search it by name, and yes this application allows you to do that. Simply type down your favourite game and it will appeat on the screen as you type. 
+<img src="github_pic/search.png"/>
+
+## 3.Gamelist
+Gamelist is a function that allows users to store their favourite games and they also can remove or clear their lists as well. Technically, it is a separate React route that displays the clicked games from the home page. Data is persisted in thge localstorage.
