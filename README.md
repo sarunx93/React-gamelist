@@ -20,3 +20,4 @@ Initailly, there are 368 games that are fetched from the API and with this, you 
 <p align="center">
 and this is how it changed after filtering.
 </p>
+<img src="github_pic/after_filter.png"/>
