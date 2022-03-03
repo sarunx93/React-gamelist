@@ -10,6 +10,13 @@ The data in this project is derived from Free-to-game API (please head over to h
 # Application Functionalities
 Data and state values are handled by context API which is one way of managing states across the application and any actions upon the application and dispatched by recduer functions. This is the more effective way and handling states in which makes the code more organized and readable, also avoid props drilling.
 ## 1.Filtering
-Initailly, there are 368 games that are fetched from the API and with this, you can filter the games by either game platforms or game genres, or even apply more than one filters at the same time to obtain more desirable results. The result text at the top will change accordingly.<br/>
-<img src="Initail_page.png"/>
+Initailly, there are 368 games that are fetched from the API and with this, you can filter the games by either game platforms or game genres, or even apply more than one filters at the same time to obtain more desirable results. The result text at the top will change accordingly.
+<br/>
+<p align="center">
+  This is the initail look before filtering.
+  </p>
 
+<img src="Initail_page.png"/>
+<p align="center">
+and this is how it changed after filtering.
+</p>
