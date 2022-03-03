@@ -8,4 +8,4 @@ Since this is a pure front-end project, there won't be any backend and the data 
 The data in this project is derived from Free-to-game API (please head over to https://rapidapi.com/digiwalls/api/free-to-play-games-database/details for more info about the API.)
 
 ## Application Functionalities
-#1.Filtering
+# 1.Filtering
