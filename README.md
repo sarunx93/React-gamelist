@@ -21,3 +21,7 @@ Initailly, there are 368 games that are fetched from the API and with this, you 
 and this is how it changed after filtering.
 </p>
 <img src="github_pic/after_filter.png"/>
+You can now see that there are only 9 games the matched with the filter of PC platform and fighting genre.
+
+## 2.Search
+If you know a lot of cool games, you may want to search it by name, and yes this application allows you to do that. Simply type down your favourite game and it will appeat on the screen as you type. 
