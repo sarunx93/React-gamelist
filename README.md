@@ -1,5 +1,6 @@
 # Table of Contents
 * [General Info](#general-info)
+* [How to run the project](#how-to-run-the-project)
 * [Application Functionalities](#application-functionalities)
 
 # General Info
