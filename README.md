@@ -7,6 +7,19 @@ React Gamelist is a basic React application to showcase my understanding on how 
 Since this is a pure front-end project, there won't be any backend and the data will be stored in the local storage in you browser.
 The data in this project is derived from Free-to-game API (please head over to https://rapidapi.com/digiwalls/api/free-to-play-games-database/details for more info about the API.)
 
+# How to run the project
+1. Install all the dependencies (Please check the installed packages in package.json file)
+```
+npm install
+```
+
+2. Start the project
+```
+npm start
+```
+
+
+
 # Application Functionalities
 Data and state values are handled by context API which is one way of managing states across the application and any actions upon the application and dispatched by recduer functions. This is the more effective way and handling states in which makes the code more organized and readable, also avoid props drilling.
 ## 1.Filtering
@@ -28,4 +41,5 @@ If you know a lot of cool games, you may want to search it by name, and yes this
 <img src="github_pic/search.png"/>
 
 ## 3.Gamelist
-Gamelist is a function that allows users to store their favourite games and they also can remove or clear their lists as well. Technically, it is a separate React route that displays the clicked games from the home page. Data is persisted in thge localstorage.
+Gamelist is a function that allows users to store their favourite games and they also can remove or clear their lists as well. Technically, it is a separate React route that displays the clicked games from the home page. Data is persisted in the localstorage.
+<img src="github_pic/gamelist.png"/>
