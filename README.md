@@ -16,7 +16,7 @@ Initailly, there are 368 games that are fetched from the API and with this, you 
   This is the initail look before filtering.
   </p>
 
-<img src="Initail_page.png"/>
+<img src="github_pic/Initail_page.png"/>
 <p align="center">
 and this is how it changed after filtering.
 </p>
