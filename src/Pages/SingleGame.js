@@ -2,13 +2,32 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGlobalContext } from "../Context/context";
 import styled from "styled-components";
-const SingleGame = () => {
+const SingleGame = ({ allGames }) => {
   const { title } = useParams();
-  console.log(title);
-
+  const [game, setGame] = useState({});
   const { games } = useGlobalContext();
   const selectedGame = games.find((game) => game.title === title);
-  console.log(selectedGame);
+
+  const fetchSingleGame = async () => {
+    let url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${selectedGame.id}`;
+    try {
+      const resp = await fetch(url, {
+        headers: {
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+          "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+        },
+      });
+      const data = await resp.json();
+      setGame(data);
+      console.log(game);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchSingleGame();
+  }, []);
+  if (!selectedGame) return <h1>Loading...</h1>;
   return (
     <Wrapper>
       <div className="content-container">

@@ -37,8 +37,7 @@ const AppProvider = ({ children }) => {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key":
-            "8e16be4ecamsh6b9af4265b2c4c0p1d1b55jsnfeaad88fd949",
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       });
       const data = await response.json();
